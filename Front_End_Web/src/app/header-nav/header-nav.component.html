@@ -1,0 +1,33 @@
+<div class="header">
+    <span id="banklogo"><img src="/assets/banklogofir.png" alt="bank logo" width="180px" height="150px"></span> 
+   <span><h1 style="color: #15136b;align-items: unset;">.</h1></span> 
+ </div>
+ <div class="topnav">
+     <ul>
+         <li><a [routerLink]="['/homeLink']"><i class="material-icons">home</i> <span class="nav-text"> Home</span></a></li>
+         <div class="dropdown">
+           <a href=""><i class="material-icons"> how_to_reg</i> <span class="nav-text"> Register</span></a>
+           <div class="dropdown-content">
+         <li><a [routerLink]="['/accountType']">Register for Account</a></li>
+         <li><a [routerLink]="['/visitorStatusLink']">Check Account status</a></li>
+
+         </div> 
+         </div>         
+         <div class="dropdown1">
+           <a href=""><i class="material-icons">login</i> <span class="nav-text"> Login</span></a>
+           <div class="dropdown-content1">
+             <li><a [routerLink]="['/loginLink']">Customer Login</a></li>
+             <li><a [routerLink]="['/adminLogin']">Admin Login</a></li>
+         </div>
+         </div>
+         <li><a  [routerLink]="['/contactUs']"><span class="material-icons">contacts</span> <span class="nav-text"> Contact us</span></a></li>
+         <li><a [routerLink]="['/CMS']"><span class="material-icons">help_center</span> <span class="nav-text"> Customer Service</span></a> </li>  
+        </ul>
+ </div>
+ <div class="row">
+   <div class="main">
+      
+   <marquee style=" background-color: #79c4ed; overflow: hidden; text-overflow: clip; z-index: 4;">Hope you all are good! In this covid-19 pandemic you can easily avail all the banking facilities from home.</marquee>
+
+ </div>
+ </div>

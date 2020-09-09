@@ -1,0 +1,44 @@
+
+    <div class="admin">
+       
+        <div>
+            
+            <h1>Admin Verification Portal</h1>
+        
+        </div>
+        <button (click)="viewVisitors()" style="margin-bottom: 20px;">check Visitor Request</button>
+        
+        <div>
+            <table *ngIf="data">
+                <thead>
+                    <th><span>Name</span></th>
+                    <th><span>Reference No.</span></th>
+                    <th><span>Aadhar No.</span></th>
+                    <th><span>Mobile No.</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Account Type</span></th>
+                    <th><span>Gross Income</span></th>
+                    <th><span>Occupation</span></th>
+                    <th><span>Actions</span></th>
+                </thead>    
+                <tbody *ngFor="let v of data; let i = index">
+                <tr>
+                    <td>{{v.firstName}} </td>
+                    <td>{{v.serviceRefNo}}</td>            
+                    <td>{{v.aadharNo}}</td>
+                    <td>{{v.phoneNumber}}</td>
+                    <td>{{v.email}}</td>
+                    <td>{{v.accountType}}</td>
+                    <td>{{v.grossAnnualIncome}}</td>
+                    <td>{{v.occupationType}}</td>
+                    <td> <button class="accept" (click)="addCustomer(i)"><span>Accept</span></button> </td>
+                    <td> <button class="rej" (click)="deleteRow(i)"><i class="fa fa-trash"><span>Reject</span></i></button></td>
+                   
+                 </tr>   
+                </tbody>
+            </table>
+        </div>
+        
+        </div>
+
+

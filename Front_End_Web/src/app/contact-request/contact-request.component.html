@@ -1,0 +1,36 @@
+
+    <div class="admin">
+       
+        <div>
+            
+            <h1>Contacts Request List</h1>
+        
+        </div>
+        <button (click)="viewContacts()">Check Contacts Request</button>
+        
+        <div>
+            <table *ngIf="data">
+                <thead>
+                    <th><span>Contact Id</span></th>
+                    <th><span>First Name</span></th>
+                    <th><span>Last Name</span></th>
+                    <th><span>Place</span></th>
+                    <th><span>Subject</span></th>
+                </thead>    
+                <tbody *ngFor="let c of data; let i = index">
+                <tr>
+                    <td>{{c.contactId}} </td>
+                    <td>{{c.firstName}} </td>
+                    <td>{{c.lastName}}</td>            
+                    <td>{{c.place}}</td>
+                    <td>{{c.subject}}</td>
+                    <!-- <td> <button class="accept" (click)="contact(i)"><span>Accept</span></button> </td> -->
+                   
+                 </tr>   
+                </tbody>
+            </table>
+        </div>
+        
+        </div>
+
+

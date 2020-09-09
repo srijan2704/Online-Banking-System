@@ -1,0 +1,19 @@
+.info{
+    border: 1px black solid;
+    background-color:#76aee3;
+    margin-left: 300px;
+}
+table,th
+{
+    width:400px;
+    padding:10px;
+}
+td
+{
+    float:right;
+}
+
+.material-icons
+{
+   margin-left: 450px;
+}

@@ -1,0 +1,107 @@
+
+<app-header-nav></app-header-nav>
+<h2>Customer Complaint Form</h2>
+<button type="button" ><a [routerLink]="['/complaintStatus']">Click Here to Check Complaint Status</a></button>
+
+<div class="blink-text">Fields marked with (*) are compulsary, Please Provide correct details. 
+  You will receive a response shortly by SMS or E-mail.</div>
+
+
+<form #regForm='ngForm' (ngSubmit)="addComplaint()">
+<table  align ="center" cellpadding = "7" >
+
+<!--------------------- Customer Type ------------------------------------------>
+<tr>
+<td>Account Type* &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:red; font-size: 16px;">{{message1}}</span></td>
+<td>
+    <input type="text" class = "inputform" #accountType="ngModel" name="accountType" maxlength="50" [(ngModel)]=complaint.accountType   required/>
+    <div *ngIf="accountType.touched">
+        <p *ngIf="accountType.errors?.required">Account Type is a required field!</p>
+      </div>
+</td>
+</tr>
+<!------------------------ Account Number --------------------------------------->
+<tr>
+<td>Account Number*</td>
+<td><input type="number" class = "inputform" name="AccountNumber"  #AccountNumber="ngModel" maxlength="50" [(ngModel)]=complaint.accountNumber required/>
+    <div *ngIf="AccountNumber.touched">
+        <p *ngIf="AccountNumber.errors?.required"> Account Number is a required field!</p>
+        <p *ngIf="AccountNumber.errors.minlength">Invalid Mobile  Number</p>
+        <p *ngIf="AccountNumber.errors.maxlength">Invalid Mobile  Number</p>
+      </div>
+</td>
+</tr>
+<!-------------------------- Name Of Complaint ------------------------------------->
+<tr>
+<td>Name of Complaintant*</td>
+<td><input type="text" name="nameofcomplaintent" class = "inputform" [(ngModel)]=complaint.nameComplaint required/>
+</td>
+</tr>
+<!-------------------------- Branch Code ------------------------------------->
+<tr>
+<td>Branch Code(If Other than Home Branch)</td>
+<td>
+<input type="text" name="BranchCode" class = "inputform" maxlength="10" [(ngModel)]=complaint.branchCode required/>
+</td>
+</tr>
+<!----------------------Mobile Number ------------------------------------->
+<tr>
+<td>Mobile Number*</td>
+<td>
+<input type="number" name="MobileNumber" #MobileNumber="ngModel"  class = "inputform" minlength="10" [(ngModel)]=complaint.mobileNumber required/>
+<div *ngIf="MobileNumber.touched">
+    <p *ngIf="MobileNumber.errors?.required">MobileNumber is a required field!</p>
+    <p *ngIf="MobileNumber.errors.minlength">Invalid Mobile  Number</p>
+  </div>
+</tr>
+
+<!----------------------Email ------------------------------------->
+<tr>
+    <td>Email*</td>
+    <td>
+    <input type="email" name="Email" class = "inputform"  #email="ngModel"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  [(ngModel)]=complaint.email required/>
+    <p *ngIf="email.errors?.pattern">This is not a valid Email!!!</p>
+    <div *ngIf="email.touched">
+        <p *ngIf="email.errors?.required">Email is a required field!</p>
+        <p *ngIf="email.errors?.pattern">This is not a valid Email!!!</p>
+      </div>
+    </tr>
+<!--------------------------Category Of Complaints----------------------------------->
+<tr>
+<td>Category Of Complaints*</td>
+<td>
+    <input type="text" class = "inputform" name="categoryOfComplaint" #categoryOfComplaint="ngModel" maxlength="50" [(ngModel)]=complaint.categoryOfComplaint required/>
+    <div *ngIf="categoryOfComplaint.touched">
+        <p *ngIf="categoryOfComplaint.errors?.required">Customer name is a required field!</p>
+      </div>
+</td>
+</tr>
+<!------------------------- Details ---------------------------------->
+<tr>
+<td>Please Give brief details of your complaint(Max 500 Chars)*<br /><br /><br /></td>
+<td><textarea class = "inputform" name="Details" rows="5" cols="20" [(ngModel)]=complaint.complaintDesc required></textarea></td>
+</tr>
+
+<tr>
+    <td>Captcha* <img [src]=imagePath alt="  " > &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:red; font-size: 20px;">{{message}}</span></td>
+    <td><input type="text" name="Captcha" #Captcha="ngModel" class = "inputform" [(ngModel)]=complaint.captcha required/>
+        <div *ngIf="Captcha.touched">
+            <p *ngIf="Captcha.errors?.required">Captcha Empty!</p>
+          </div>
+    </td>
+</tr>
+
+<!------------------------- Captcha ---------------------------------->
+
+<!----------------------- Submit and Reset ------------------------------->
+</table>
+<br>
+<span>
+<div>
+    <span>
+<input  class="swd-button" type="submit" value="Submit" [disabled]='!regForm.valid' ></span>
+<span>
+<input class="swd-button" type="reset" value="Reset"></span>
+</div>
+</span>
+</form>

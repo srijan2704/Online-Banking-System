@@ -1,0 +1,38 @@
+<app-header-nav></app-header-nav>
+<div class="visitor">
+<h1>Status Check</h1>
+<form (ngSubmit)="showStatus()">
+<table class="container-table">
+        <tr><input class="text-box" type="text" [(ngModel)]='refNo.serviceRefNo' name="statusId" placeholder="Enter the reference number"/></tr>
+        <tr><Button type="submit">Find</Button></tr>  
+</table>
+</form>
+<table class="status" align="center" style="border:2px solid black;">
+
+    <tbody *ngIf="visitorStatus">
+        <tr>
+            <th>
+                <span>Service Reference No:</span>
+            </th>
+            <td>
+                <span>{{visitorStatus.serialRefNo}}</span>
+             </td>   
+        </tr>
+
+        <tr>
+            <th>
+                <span>Status:</span>
+            </th>
+            <td>
+                <span>{{visitorStatus.status}}</span>
+             </td>   
+        </tr>
+
+     </tbody>
+     
+     </table>
+
+    </div>
+        <!-- serialReferenceNumber:number;
+  status:string;
+  verified:string; -->

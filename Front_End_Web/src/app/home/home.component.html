@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <app-header-nav></app-header-nav>   
+    <section class="start">
+        <div class="banner">
+            <h1>Goodbye to the old ways.<br>Say, hello to the new avtar of Banking!</h1>
+            <a href="#" class="btn login-btn" [routerLink]="['/loginLink']">Login </a>
+            <a href="#" class="btn register-btn" [routerLink]="['/accountType']">Register Now </a>
+           
+        </div>
+     </section>   
+
+     <section class="intro">
+        <h2>Internet Banking</h2>
+            
+        <p>
+            Internet Banking is a convenient way to do banking from the comfort of your home or office. Avoid the queue or delays and try our simple and secure Internet Banking facility for an unmatched online banking experience.
+           <br> Just <a [routerLink]="['/loginLink']">login</a> using your <b class="bold">User ID</b> and <b class="bold">Password</b> to experience the benefits of seamless Internet Banking powered by ISB.<br><br>
+        </p>
+        <p style="text-align: center;">
+        <b class="bold">Still not a part of the ISB family ?</b><br>
+        <a [routerLink]="['/accountType']">Register</a> with us today and avail various benefits and heavy discounts with Internet Banking.
+         </p>   
+     </section>
+          
+     <section class="dos-and-dont">
+    <div class="block">
+        
+            <div class="plan-box-do">
+                <div>
+                    <h3>Always</h3>
+                   <!-- <p class="plan-price">$399 <span>/ month</span></p>
+                    <p class="plan-price-meal">That’s only 13.30$ per meal </p>-->
+                </div>
+                <div>
+                    <ul>
+                        <li>Keep your device free of malware.</li>
+                        <li>Change your passwords periodically.</li>
+                        <li>Avoid using vulnerable systems. </li>
+                    </ul>
+                </div>
+
+            </div>
+        
+        
+            <div class="plan-box-dont">
+                <div>
+                    <h3>Never</h3>
+               <!-- <p class="plan-price">$149 <span>/ month</span></p>
+                    <p class="plan-price-meal">That’s only 14.90$ per meal </p> -->
+                </div> 
+                <div>
+                    <ul>
+                        <li>Reveal your credentials to anyone. </li>
+                        <li>Respond to any mail seeking password. </li>
+                        <li>Reverting to suspicious mails. </li>
+                    </ul>
+                </div>
+            </div>
+        
+    </div>
+</section>
+
+    <section class="phishing">
+        <div class="row">
+            <h2>Your Security is in Your Hands !</h2>
+            
+            <div>
+                <h3>A few important tips to keep in mind</h3>
+                <ul>
+                    <li>The URL in the browser address begins with "https".</li>
+                    <li>The address or the status displays a lock symbol (ensuring secure entry).</li>
+                    <li>If possible avoid using services on an public unrecognized system.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Beware of phishing attacks</h3>
+                <ul>
+                    <li>Phishing is a fraudulent attempt, usually made through various devices seeking your confidential information</li>
+                    <li>We don't initiate password or id reset/change without user prompt. </li>
+                    <li>Incase of any suspicious or unauthorized transaction, kindly inform the bank as soon as possible.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="mall-slide" style="margin:auto;">
+        <div class="slid-content">
+            <div class="mall-show-slide fade" *ngFor="let item of ImageData;">
+                <img class="image-slider" src="{{item}}">
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

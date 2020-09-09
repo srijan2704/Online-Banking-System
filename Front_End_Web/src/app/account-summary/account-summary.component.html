@@ -1,0 +1,54 @@
+<div class="limiter">
+    <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                <table>
+                <thead>
+                <tr class="table100-head">
+                <th class="column9">Account Number</th>
+                <th class="column9">Balance</th>
+                <th class="column9">Account Type</th>
+                <th class="column9">Account Status</th>
+                </tr> 
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="column9">{{user.accountNo}}</th>
+                        <th class="column9">{{user.accountBalance}}</th>
+                        <th class="column9">{{user.accountType}}</th>
+                        <th class="column9">{{user.accountStatus}}</th>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
+            <br>
+            <br>
+            <div class="table100">
+                <table *ngIf="value">
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Transaction Date</th>
+                            <th class="column2">Closing Balance</th>
+                            <th class="column4">Opening Balance</th>
+                            <th class="column5">TransactioN Amount</th>
+                            <th class="column8">Transaction method</th>
+                            <th class="column9">Transaction type</th>
+                            <th class="column10">Transaction Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let transactionDetail of value">
+                                <td class="column1">{{transactionDetail.transactionDate}}</td>
+                                <td class="column2">{{transactionDetail.closingBalance}}</td>
+                                <td class="column4">{{transactionDetail.openingBalance}}</td>
+                                <td class="column5">{{transactionDetail.transactionAmount}}</td>
+                                <td class="column8">{{transactionDetail.transactionMethod}}</td>
+                                <td class="column9">{{transactionDetail.transactionType}}</td>
+                                <td class="column10">{{transactionDetail.transactionStatus}}</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<form (ngSubmit)="getStatement()">
+<div class="container">
+    <span class="title">Account Statement</span>
+    <div class="container-1">
+        <table>
+            <tr>
+                <th>Account No./Nick Name</th>
+                <th>Name</th>
+                <th>Account Type</th>
+                <th>Balance</th>
+            </tr>
+            <!--Will Use NgFor here-->
+            <tr>
+                <td id="i1">{{user.accountNo}}</td>
+                <td id="i2">{{customerName}}</td>
+                <td id="i3">{{user.accountType}}</td>
+                <td id="i4">{{user.accountBalance}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="container-2">
+        <br>
+        <span class="title">Select options for the statement period</span>
+        <div class="container-3">
+            <table class="table2">
+                <tr>
+                    <td>Start Date</td>
+                    <td><input type="date" name="startDate" [(ngModel)]="accountStatement.fromDate"></td>
+                </tr>
+                <tr>
+                    <td>End Date</td>
+                    <td><input type="date" name="endDate" [(ngModel)]="accountStatement.toDate"></td>
+                </tr>
+            </table>
+        </div><br>
+        <div>
+          <button class="button go">Go</button> &nbsp;
+          <button class="button cancel" type="reset">Cancel</button>
+    </div>
+
+
+    </div>
+</div>
+</form>
+<table *ngIf="printStatement" style="padding-top:30px;">
+    <thead>
+        <tr class="table100-head">
+            <th class="column1">Transaction Date</th>
+            <th class="column2">Closing Balance</th>
+            <th class="column4">Opening Balance</th>
+            <th class="column5">Transaction Amount</th>
+            <th class="column6">From Account</th>
+            <th class="column7">To Account</th>
+            <th class="column8">Transaction method</th>
+            <th class="column9">Transaction type</th>
+            <th class="column10">Transaction Status</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let u of   printStatement">
+                <td class="column1">{{u.transactionDate}}</td>
+                <td class="column2">{{u.closingBalance}}</td>
+                <td class="column4">{{u.openingBalance}}</td>
+                <td class="column5">{{u.transactionAmount}}</td>
+                <td class="column6">{{u.fromAccount}}</td>
+                <td class="column7">{{u.toAccount}}</td>
+                <td class="column8">{{u.transactionMethod}}</td>
+                <td class="column9">{{u.transactionType}}</td>
+                <td class="column10">{{u.transactionStatus}}</td>
+            </tr>
+    </tbody>
+</table>

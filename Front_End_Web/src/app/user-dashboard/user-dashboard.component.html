@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+   <app-header-app></app-header-app>
+     <app-user-nav-bar></app-user-nav-bar>
+        <div class="mid-body">
+            <div class="left_section">
+                <div class="head_of_left_section">
+                  <p style="margin-left: 10px;">Quick Links &nbsp;></p>
+                </div>
+            <div class="mid_of_left_section">
+                <ul class="h-ul">
+                    <li class="h-li"><a [routerLink]="['/userDashboard/accountSummary']">Account Summary</a></li>
+                    <li class="h-li"><a [routerLink]="['/userDashboard/accountStatement']">Account Statement</a></li>
+                    <li class="h-li"><a [routerLink]="['/userDashboard/changePassword']">Login Password Change</a></li>
+                    <li class="h-li"><a [routerLink]="['/userDashboard/userProfile']">Profile</a></li>
+                    <li class="h-li"><a href="/userDashboard/fundTransfer">Funds Transfer</a></li>
+                    <li class="h-li"><a [routerLink]="['/CMS']">Customer Service</a></li>
+                  </ul>
+                </div>
+                <div class="bottom_of_left_section">
+                    
+                </div>
+            </div>
+            <div class="right_section">
+                <div class="head_of_right_section">
+                    You are in: {{path}}
+                </div>
+                <div class="mid_of_right_section">
+                  <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+
+</body>
+</html>

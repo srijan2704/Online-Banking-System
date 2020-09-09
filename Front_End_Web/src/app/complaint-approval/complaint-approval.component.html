@@ -1,0 +1,42 @@
+
+    <div class="admin">
+       
+        <div>
+            
+            <h1>Complaints List</h1>
+        
+        </div>
+        <button (click)="viewComplaints()">Check complaints</button>
+        
+        <div>
+            <table *ngIf="data">
+                <thead>
+                    <th><span>Complaint Number</span></th>
+                    <th><span>Account Number</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Mobile No.</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Account Type</span></th>
+                    <th><span>complaint category</span></th>
+                    <th><span>complaint Description</span></th>
+                </thead>    
+                <tbody *ngFor="let c of data; let i = index">
+                <tr>
+                    <td>{{c.complaintNo}} </td>
+                    <td>{{c.accountNumber}} </td>
+                    <td>{{c.nameComplaint}}</td>            
+                    <td>{{c.mobileNumber}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.accountType}}</td>
+                    <td>{{c.categoryOfComplaint}}</td>
+                    <td>{{c.complaintDesc}}</td>
+                    <td> <button class="accept" (click)="Approve(i)"><span>Resolved</span></button> </td>
+                   
+                 </tr>   
+                </tbody>
+            </table>
+        </div>
+        
+        </div>
+
+

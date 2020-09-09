@@ -1,0 +1,33 @@
+<body>
+    <div class="benificiary">
+       
+        <div>
+            <h3>Payee List</h3>
+        
+        </div>
+           <table *ngIf="values">
+               <tr>
+                   <th>Account Number</th>
+                   <th>Beneficiary Name</th>
+                   <th>Beneficiary NickName</th>
+               </tr>
+               <tr *ngFor="let v of values">
+                   <td>{{v.beneficiaryAccountNo}}</td>
+                   <td>{{v.beneficiaryName}}</td>
+                   <td>{{v.beneficiaryNickName}}</td>
+               </tr>
+           </table>
+        <div>
+            <button class="add" (click)='show()'><span>+Add Beneficiary</span></button>
+            <form>
+                <div *ngIf="isShow">
+                    <input placeholder="Enter Beneficiary Name" name="BeneficiaryName" [(ngModel)]='beneficiary.beneficiaryName' required><br>
+                    <input placeholder="Enter nick name"  name="BeneficiaryNickName" [(ngModel)]='beneficiary.beneficiaryNickName' required><br>
+                    <input placeholder="Enter the Account number" name="BeneficiaryAccount" [(ngModel)]='beneficiary.beneficiaryAccountNo' required><br>
+                    <button class="add" (click)='addTable()'> <span>Done</span></button>
+                    <button class="add" type="reset"> <span>Reset</span></button>
+                </div>
+            </form>
+         </div>
+        </div>
+</body>

@@ -1,0 +1,124 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    line-height: 1.42857143;
+    color:black;
+    background-color: white;
+}
+.header {
+    padding: 10px;
+    text-align: center;
+    background: white;
+    width: 100%;
+    margin: auto;
+    
+  }
+h2{
+ font-family: Sans-serif; 
+ font-size: 24px;     
+ font-style: normal; 
+ font-weight: bold; 
+ background-color:#0e7eb3;
+ color: white;
+ text-align: center; 
+ 
+}
+table,th,td{
+ width: 70%;
+ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+ color:#000000; 
+ font-size: 14px; 
+ font-style:normal;
+ font-weight:bold;
+ border-collapse:collapse; 
+ border: 1px gray;
+ border-style:inset;
+ border-spacing: 0px;
+  }
+a:link, a:visited, a:hover, a:active{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:white;
+    text-decoration:none;
+}
+
+  .div1{
+    
+      background-color: #116dc2;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+  }
+  input[type=submit], input[type=reset]{
+ width: 10%;
+ padding: 8px 10px;
+ margin: 10px 10px;
+ box-sizing:content-box;
+ background-color: blue;
+ border-radius: 8px;
+ color: white;
+ float:center;
+ margin:0px auto;
+ display:block;
+}
+button{
+ width: 20%;
+ padding: 8px 10px;
+ margin: 10px 10px;
+ box-sizing:content-box;
+ background-color: #116dc2;
+ border-radius: 8px;
+ color: white;
+ align-content: center;
+}
+img{
+    float:inline-end;
+    padding-right: 10px;
+    border-style:solid;
+    border-width: 1px;
+    height:50px;
+    width:200px; 
+
+}
+.swd-button {
+    background: #11c3ff linear-gradient(to bottom, transparent, #009bcf);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font: bold 12px Arial, Helvetica, sans-serif;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+
+.inputform{
+    padding: 2px;
+      border-radius:5px;
+      -moz-border-radius:5px;
+      -webkit-border-radius:5px;
+   }
+
+input[type=text], input[type=email], input[type=number]{
+ width: 60%;
+ padding: 6px 12px;
+ margin: 5px 0;
+ box-sizing:border-box;
+}
+.blink-text{
+    text-align: center;
+    padding:10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    animation: blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+    0%		{ color: #10c018;}
+    25%		{ color: #1056c0;}
+    50%		{ color: #ef0a1a;}
+    75%		{ color: #254878;}
+    100%	{ color: #04a1d5;}
+}

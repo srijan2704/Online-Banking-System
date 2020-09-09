@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <app-header-app></app-header-app>
+    <div class="container">
+        <div>
+            <ul>
+                <li><a [routerLink]="['/adminPortal/adminVerification']"><i class="material-icons">fiber_new</i><br>Account Opening Requests</a></li>
+                <li><a  [routerLink]="['/adminPortal/complaintApprove']"><i class="material-icons">preview</i><br>check Complaints</a></li>
+                <li><a  [routerLink]="['/adminPortal/contactRequest']"><i class="material-icons">preview</i><br>check Contacts request</a></li>
+
+                <li><a (click)="logout()"><i class="material-icons">power_settings_new</i><br>LogOut</a></li>
+                <li style="float:right; font-size:24px; color:white; font-weight: bolder;padding: 30px;">Admin Portal</li>
+              </ul>
+              <div class="container-username">
+                  <span class="getDateTime">{{getDatetime}}</span><span class="userName">Hi Admin,  {{adminName}}</span>
+              </div>
+        </div>
+        <div class="mid-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>
+</html>

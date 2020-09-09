@@ -1,0 +1,25 @@
+export class VisitorRegister
+{
+    firstName:string;
+    lastName:string;
+    middleName:string;
+    age:number;
+    gender:string;
+    email:string;
+    phoneNumber:string;
+    aadharNo:string;
+    localAddress:string;
+    localCity:string;
+    localPincode:string;
+    localState:string;
+    permanentAddress:string;
+    permanentCity:string;
+    permanentPincode:string;
+    permanentState:string;
+    occupationType:string;
+    sourceOfIncome:string;
+    grossAnnualIncome:number;
+    debitCardStatus:string;
+    netBankingStatus:string;
+    accountType:string;
+}

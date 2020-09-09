@@ -1,0 +1,18 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div class="container">
+    <div>
+        <ul>
+            <li><a class="active" [routerLink]="['/userDashboard/userProfile']">  <i class="material-icons">account_circle</i><br>My Accounts & Profile</a></li>
+            <li><a [routerLink]="['/userDashboard/accountBalance']"><i class="material-icons">account_balance</i><br>Account Balance</a></li>
+            <li><a [routerLink]="['/userDashboard/transactions']"><i class="material-icons">import_export</i><br>Transactions</a></li>
+            <li><a [routerLink]="['/userDashboard/fundTransfer']"><i class="material-icons">call_made</i><br>Funds Transfer</a></li>
+            <li><a [routerLink]="['/userDashboard/addBeneficiary']"><i class="material-icons">person_add</i><br>Add Beneficiary</a></li>
+            <li><a (click)="logout()"><i class="material-icons">power_settings_new</i><br>LogOut</a></li>
+            <li style="float:right; font-size:24px; color:white; font-weight: bolder;padding: 30px;">Dashboard</li>
+          </ul>
+          <div class="container-username">
+              <span class="getDateTime">{{getDatetime}}</span><span class="userName">Hi, {{customerName}}</span>
+          </div>
+    </div>

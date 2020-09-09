@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100">
+                    <table>
+                    <thead>
+                    <tr class="table100-head">
+                    <th class="column9">Account Number</th>
+                    <th class="column9">Balance</th>
+                    </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="column9">{{user.accountNo}}</th>
+                            <th class="column9">{{user.accountBalance}}</th>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="table100">
+                        <table *ngIf="value">
+                            <thead>
+                                <tr class="table100-head">
+                                    <th class="column1">Transaction Date</th>
+                                    <th class="column2">Transaction Type</th>
+                                    <th class="column4">Transaction Amount</th>
+                                    <th class="column5">From Account</th>
+                                    <th class="column6">To Account</th>
+                                    <th class="column7">Opening Balance</th>
+                                    <th class="column8">Closing Balance</th>
+                                    <th class="column9">Transaction method</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor="let transactionDetail of value">
+                                        <td class="column1">{{transactionDetail.transactionDate}}</td>
+                                        <td class="column2">{{transactionDetail.transactionType}}</td>
+                                        <td class="column4">{{transactionDetail.transactionAmount}}</td>
+                                        <td class="column5">{{transactionDetail.fromAccount}}</td>
+                                        <td class="column6">{{transactionDetail.toAccount}}</td>
+                                        <td class="column7">{{transactionDetail.openingBalance}}</td>
+                                        <td class="column8">{{transactionDetail.closingBalance}}</td>
+                                        <td class="column9">{{transactionDetail.transactionMethod}}</td>
+                                    
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+.admin{
+    background-color: #a6d3f7;
+    margin: auto;
+    width: auto;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding: 15px;
+    border: inset;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 40px;
+    color: black;
+    font-size: 100%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
+table{
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 5px;
+    width: 90%;
+    overflow:hidden;
+    border-radius: 10px;
+    margin: auto;
+    height: auto;
+}
+
+tr{
+    height: auto;
+
+    
+}
+
+
+td{
+    width:auto;
+    padding: 5px;
+    border: 1px solid black;
+    font-weight: 200;
+    height:50px;
+}
+
+.rej span{
+    padding: 10px;
+    font-weight: 600;
+}
+
+
+.rej{
+    font-weight: 700;
+    border-radius: 200px;
+    padding: 10px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.rej:hover{
+    background-color: #e74c3c;
+    color: white;
+    
+    
+}
+
+.accept span{
+    padding: 10px;
+    font-weight: 600;
+}
+
+.accept {
+    font-weight: 700;
+    border-radius: 200px;
+    padding: 10px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.accept:hover{
+    background-color: #2ecc71;
+    color: white;
+}
+
+

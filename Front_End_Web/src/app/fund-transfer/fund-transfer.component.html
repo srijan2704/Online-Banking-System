@@ -1,0 +1,86 @@
+<h2>Fund Transfer [IMPS/NEFT/RTGS]</h2>
+<div class="container">
+    <table align="center" cellpadding="7">
+        <tr>
+            <th>Account No.</th>
+            <th>Account Type</th>
+            <th>Balance</th>
+        </tr>
+        <tr>
+            <td id="i1">{{accountValue.accountNo}}</td>
+            <td id="i3">{{accountValue.accountType}}</td>
+            <td id="i4">{{accountValue.accountBalance}}</td>
+        </tr>
+    </table>
+    <br />
+    <form *ngIf="contentVisible">
+        <span class="transfertype">Transfer Type*</span>
+        <table>
+            <tr>
+                <th><input type="radio" name="IMPS" value="IMPS"
+                        [(ngModel)]="transaction.methodtype">IMPS</th>
+                <th><input type="radio" name="NEFT" value="NEFT" 
+                        [(ngModel)]="transaction.methodtype">NEFT</th>
+                <th><input type="radio" name="RTGS" value="RTGS"
+                        [(ngModel)]="transaction.methodtype">RTGS</th>
+            </tr>
+        </table>
+        <br>
+        <label> Amount*</label>
+        <label><input style="width:200px;" type="text" name="amount" placeholder="{{textinfo}}"
+                [(ngModel)]="transaction.amount"></label>
+        <br /><br />
+
+        <a [routerLink]="['/userDashboard/addBeneficiary']">Click Here to add new Beneficiary</a>
+
+        <p>Select the Beneficiary Account</p>
+
+        <table align="center" cellpadding="7" *ngIf="values">
+            <tr>
+                <th>Account No.</th>
+                <th>Beneficiary Name</th>
+                <th>Beneficiary Nickname</th>
+            </tr>
+            <tr *ngFor="let v of values">
+                <td id="i1"><input type="radio" name="beneficiary" [value]="v.beneficiaryAccountNo"
+                        [(ngModel)]="transaction.toAccount">{{v.beneficiaryAccountNo}}</td>
+                <td id="i3">{{v.beneficiaryName}}</td>
+                <td id="i4">{{v.beneficiaryNickName}}</td>
+            </tr>
+        </table>
+        <div align="center" cellpadding="7">
+            <tr>
+                <th>Enter Transaction Password</th>
+                <th><input type="password" name="transactionPass" [(ngModel)]="transaction.password" /></th>
+            </tr>
+            <!-- <tr>
+        <th>Enter OTP:</th>
+        <th><input type="number" name="Otp"></th>
+        <th><button name="sendOpt">Send otp</button></th>
+    </tr> -->
+
+        </div>
+        <br>
+        <label for="termsandcondition"><a href="/assets/terms.pdf" target="_blank">Read the terms and
+                conditions</a></label><br>
+        <br>
+        <button class="button go" *ngIf="contentVisible" (click)="setVisible();send();">Proceed</button> &nbsp;
+        <button class="button cancel">Cancel</button>
+    </form>
+</div>
+
+<div class="container" *ngIf="!contentVisible">
+    <span style="padding-bottom:20px; color:black;font-size: 15px;">Transfer Amount: {{transaction.amount}}</span><br>
+    Please Enter OTP to proceed
+    <form>
+        <table>
+            <tr>
+                <input type="text" name="otp" [(ngModel)]=otp.otp />
+            </tr>
+            <tr>
+                <P>{{message}}</P>
+                <button class="button go" (click)="validate()">Transfer</button>
+            </tr>
+        </table>
+    </form>
+</div>
